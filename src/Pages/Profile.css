@@ -1,0 +1,36 @@
+/* ProfilePage.css */
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #3498db; /* Blue border color */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #ecf0f1; /* Light gray background color */
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3498db; /* Blue text color */
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-details p {
+    margin-bottom: 15px;
+    color: #555; /* Dark gray text color */
+  }
+  
+  /* Add a subtle hover effect */
+  .profile-container:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    background-color: #f2f3f4; /* Lighter gray background color on hover */
+  }
+  
