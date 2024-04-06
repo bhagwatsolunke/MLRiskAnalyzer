@@ -111,7 +111,7 @@ router.get("/watchlist/:userId", async (req, res) => {
         }));
       
         res.status(200).json(watchlist);
-        console.log("Watchlist fetched successfully");
+    //    console.log("Watchlist fetched successfully");
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal server error' });

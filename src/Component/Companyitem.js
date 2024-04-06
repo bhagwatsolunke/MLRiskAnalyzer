@@ -17,12 +17,13 @@ export default function CompanyItem({ companyItem }) {
 
   const checkIfAddedToWatchlist = async (userId, companyId) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/company/${userId}/watchlist`);
-      const watchlist = response.data.watchlist;
-      const isAdded = watchlist.some(item => item.companyId === companyId);
+      const response = await axios.get(`http://localhost:8080/api/company/watchlist/${userId}`);
+      const watchlist = response.data || [];
+      const isAdded = watchlist.some(item => item._id === companyId);
       setIsAdded(isAdded);
     } catch (error) {
       console.error('Error checking if added to watchlist:', error);
+      setIsAdded(false);
     }
   };
 
@@ -41,7 +42,7 @@ export default function CompanyItem({ companyItem }) {
   };
 
   return (
-    <div className="card w-75 mb-3" style={{ backgroundColor: '#f0f0f0' }} >
+    <div className="card w-75 mb-3" style={{ backgroundColor: '#ADD8E6' }} >
       <div className="card-body">
         <h5 className="card-title">{companyItem.companyname}</h5>
         <p className="card-text">industry: {companyItem.industry}</p>

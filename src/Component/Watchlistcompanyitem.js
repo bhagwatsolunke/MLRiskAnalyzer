@@ -43,7 +43,7 @@ export default function WatchlistCompanyItem({ companyItem }) {
 
 
   return (
-    <div className="card w-75 mb-3" style={{ backgroundColor: '#f0f0f0' }} >
+    <div className="card w-75 mb-3" style={{ backgroundColor: '#ADD8E6' }} >
       <div className="card-body">
         <h5 className="card-title">{companyItem.companyname}</h5>
         <p className="card-text">industry: {companyItem.industry}</p>
