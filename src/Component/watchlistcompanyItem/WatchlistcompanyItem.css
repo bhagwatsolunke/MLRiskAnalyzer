@@ -1,0 +1,37 @@
+.item-container{
+    width: calc(45% - 5px); /* Each card takes up 50% of the container width with margin */
+    margin-bottom: 20px; /* Margin between each row of cards */
+    background-color: #f0f0f0; /* Background color of the card */
+    color: black;
+    padding: 15px; /* Padding inside the card */
+    box-sizing: border-box;
+    /* margin-right: 20px; */
+    border-radius: 15px;
+    /* border: solid yellow 2px; */
+    box-shadow: 3px 5px 6px rgba(0,0,0,0.1);
+    font-family : 'Varela Round', sans-serif;
+    transition: background-color 0.5s,transform 0.5s,box-shadow 0.5s;
+    text-decoration: none;
+}
+.item-container:hover{
+    cursor: pointer;
+    background-color:#f1eaea;
+    box-shadow: 4px 6px 5px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn.btn-primary.watchlist{
+    transition: background-color 0.5s,transform 0.5s;
+}
+
+.btn.btn-primary.watchlist:hover{
+    transform: translateY(-1px);
+    /* border :solid red 1px; */
+    background-color: red;
+
+}

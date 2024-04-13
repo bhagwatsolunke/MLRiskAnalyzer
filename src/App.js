@@ -1,15 +1,15 @@
 import './App.css';
-import Homepage from './Pages/Homepage';
+import Homepage from './Pages/homepage/Homepage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './Pages/login.js';
-import Signup from './Pages/Signup.js';
-import Navbar from './Component/Navbar.js';
-import Alert from './Component/Alert.js';
+import Login from './Pages/login/login.js';
+import Signup from './Pages/signup/Signup.js';
+import Navbar from './Component/navbar/Navbar.js';
+import Alert from './Component/alert/Alert.js';
 import {useState} from 'react'
-import About from './Pages/About.js';
-import ProfilePage from './Pages/Profile.js';
-import Watchlist from './Pages/Watchlist.js';
-import Analysis from './Pages/Analysis.js';
+import About from './Pages/about/About.js';
+import ProfilePage from './Pages/profile/Profile.js';
+import Watchlist from './Pages/watchlist/Watchlist.js';
+import Analysis from './Pages/analysis/Analysis.js';
 
 
 function App() {

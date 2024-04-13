@@ -1,0 +1,6 @@
+.watchlist{
+    /* border: solid red 2px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

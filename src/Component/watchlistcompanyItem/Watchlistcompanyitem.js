@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Link } from "react-router-dom";
+import "./WatchlistcompanyItem.css"
 
 export default function WatchlistCompanyItem({ companyItem }) {
   const [user, setUser] = useState(null);
@@ -43,12 +44,16 @@ export default function WatchlistCompanyItem({ companyItem }) {
 
 
   return (
-    <div className="card w-75 mb-3" style={{ backgroundColor: '#ADD8E6' }} >
-      <div className="card-body">
-        <h5 className="card-title">{companyItem.companyname}</h5>
-        <p className="card-text">industry: {companyItem.industry}</p>
-        <a href="#" className="btn btn-primary" onClick={() => removefromWatchlist(companyItem._id)} >Remove from Watchlist</a>
+    <Link to={`/`} className='item-container'>
+      <div className='item'>
+        <div className='item-left'>
+          <h4 className='item-title'>{companyItem.companyname}</h4>
+          <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
+        </div>
+        <div className='item-right'>
+        <a href="#" className="btn btn-primary watchlist" onClick={() => removefromWatchlist(companyItem._id)} >Remove</a>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -1,0 +1,63 @@
+.login {
+    height: calc(100vh -0px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    /* border : solid red 2px */
+    padding-top:10px;
+  }
+.loginTitle{
+    font-size : 40px;
+    font-family:'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+.loginForm{
+    margin-top : 10px;
+    display : flex;
+    flex-direction: column;
+    font-family:'Roboto', sans-serif;
+    /* border: solid red 2px; */
+    color: rgb(0, 0, 0);
+}
+
+.loginForm > label{
+    margin-top : 5px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    font: 23px;
+    /* border: solid red 2px; */
+    font-weight: 600;
+}
+.loginInput{
+    padding : 10px;
+    background-color: rgb(255, 255, 255);
+    border:solid black 2px;
+    font-family:'Roboto', sans-serif;
+    width: 350px;
+    text-decoration: none;
+    border-radius: 7px;
+    outline: none;
+}
+.loginButton{
+    margin-top : 20px;
+    cursor : pointer;
+    background-color: teal;
+    border : none;
+    color : white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    font-family:'Roboto', sans-serif;
+    transition: background 0.5s,transform 0.5s;
+}
+.loginButton:hover{
+    background-color: rgb(6, 92, 92);
+    transform: translateY(-1px);
+}
+.loginButton:disabled{
+    cursor: not-allowed;
+    background-color : rgb(246, 214, 203);
+}
