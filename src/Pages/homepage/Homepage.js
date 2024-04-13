@@ -1,5 +1,5 @@
-import React from 'react'
-import Companyitem from '../Component/Companyitem'
+import React from 'react';
+import Companies from '../../Component/companies/Companies';
 import { useEffect,useState } from "react";
 import axios from 'axios';
 
@@ -37,14 +37,8 @@ export default function Homepage() {
 
   return (
     <>
-    <div className="company-item">
-      {companies.length > 0 ? (
-        companies.map((company) => (
-          <Companyitem   key={company._id} companyItem={company} />
-        ))
-      ) : (
-        <p>No companies to display</p>
-      )}
+    <div className='home'>
+      <Companies companies={companies}/>
     </div>
     </>
   )

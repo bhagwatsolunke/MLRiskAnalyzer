@@ -1,0 +1,121 @@
+.top{
+    width:100%;
+    height: 50px;
+    background-color: #0c0c0c;
+    color: rgb(146, 127, 127);
+    position:sticky;
+    top:0;
+    display :flex;
+    align-items: center;
+    font-family:'Roboto', sans-serif;
+    z-index: 999;
+    /* text-decoration : none; */
+}
+.topLeft,.topRight{
+    flex :3;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    font-size: 23px;
+    color: rgb(255, 255, 255);
+}
+.topCenter{
+    flex:6;
+}
+.topIcon{
+    font-size : 20px;
+    margin-right : 10px;
+    color : #444;
+    cursor : pointer;
+}
+.topImg{
+    width:40px;
+    height :40px;
+    border-radius:50%;
+    object-fit: cover;
+}
+.topList{
+    display:flex;
+    justify-content: center;
+    margin : 10px;
+    padding : 10px;
+    list-style :  none;
+}
+.topListItem{
+    margin-right: 20px;
+    font-size : 18px;
+    font-weight: 300;
+    cursor : pointer;
+    position: relative;
+    /* border : solid red 2px; */
+}
+
+.topListItem a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.5s; /* Change transition property */
+}
+
+.topListItem a:hover::after {
+    width: 100%;
+}
+
+.topListItem.logout{
+    margin-left:43px;
+}
+
+.topListItem.logout:hover {
+    cursor: pointer;
+    color:red;
+    transform: translateY(-1px);
+    transition: color 0.5s;
+}
+
+
+.logo{
+    width:140px;
+    border-radius: 9px;
+}
+
+
+.topSearchIcon{
+    font-size : 18px;
+    color:#666;
+    cursor : pointer;
+    margin-left : 35px;
+}
+.fa-solid{
+    margin-right: 24px;
+    font-size: 20px;
+}
+.link{
+    text-decoration: none;
+    color:  white;
+}
+.fa-regular.fa-user{
+    margin: 30px;
+    border : solid white 2px;
+    border-radius: 20px;
+    padding: 6px;
+    text-decoration: none;
+    color: white;
+}
+.fa-regular.fa-user:hover{
+    cursor: pointer;
+    border: solid rgb(101, 101, 250) 2px;
+    color:rgb(114, 114, 244)
+}
+.btn.btn-primary.logout{
+    transition: background-color 0.5s,transform 0.5s,border 0.5s;
+}
+.btn.btn-primary.logout:hover{
+    background-color: red;
+    border:solid red 1px;
+}

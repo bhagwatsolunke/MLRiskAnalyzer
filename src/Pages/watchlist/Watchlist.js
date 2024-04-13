@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import WatchlistCompanyItem from '../Component/Watchlistcompanyitem';
+import WatchlistCompanyItem from '../../Component/watchlistcompanyItem/Watchlistcompanyitem';
+import "./Watchlist.css"
+
 
 export default function Watchlist() {
   const [companies, setCompanies] = useState([]);
@@ -33,7 +35,7 @@ export default function Watchlist() {
   return (
     <>
       {user ? (
-        <div className="company-item">
+        <div className="watchlist">
           {companies.length > 0 ? (
             companies.map((company) => (
               <WatchlistCompanyItem key={company._id} companyItem={company} />
