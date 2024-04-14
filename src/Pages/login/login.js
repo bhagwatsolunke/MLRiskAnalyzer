@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import Alert from '../../Component/alert/Alert'
+// import Alert from '../../Component/alert/Alert'
 import './login.css'
 
 //const apiEndpoint="https://inotebook-backend-0rtu.onrender.com"
@@ -46,10 +46,10 @@ const Login = (props) => {
             <span className='loginTitle'>Login to continue </span>
             <form className='loginForm' onSubmit={handleSubmit}>
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="loginInput" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
+                    <input type="email" className="loginInput" placeholder="Enter your email..."value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="loginInput" value={credentials.password} onChange={onChange} name="password" id="password" />
+                    <input type="password" className="loginInput" placeholder="Enter your password..."value={credentials.password} onChange={onChange} name="password" id="password" />
              
 
                 <button type="submit" className="loginButton">Submit</button>

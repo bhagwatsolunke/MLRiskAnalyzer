@@ -48,7 +48,7 @@ export default function Navbar() {
           </form>
         ) : (
           <>
-          <Link to="/profile" className='link' > <i class="fa-regular fa-user"></i></Link>
+          <Link to="/profile" className='link' > <i class="fa-regular fa-user" title="Profile"></i></Link>
           <button onClick={handleLogout} className=" btn btn-primary logout"> Logout</button>
           </>
         )}

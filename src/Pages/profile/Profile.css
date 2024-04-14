@@ -1,36 +1,92 @@
-/* ProfilePage.css */
+.profile{
+  display: flex;
+  flex-direction: column;
+  margin-left:10px;
+  /* border: solid red 2px; */
+ 
+}
 
-.profile-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #3498db; /* Blue border color */
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background-color: #ecf0f1; /* Light gray background color */
-  }
-  
-  .profile-header {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #3498db; /* Blue text color */
-  }
-  
-  .profile-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .profile-details p {
-    margin-bottom: 15px;
-    color: #555; /* Dark gray text color */
-  }
-  
-  /* Add a subtle hover effect */
-  .profile-container:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease-in-out;
-    background-color: #f2f3f4; /* Lighter gray background color on hover */
-  }
-  
+.subtitle{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 4px;
+  color:blue;
+}
+
+
+.profile-details{
+  /* border:solid yellow 2px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.profileBox{
+  /* border : solid black 2px; */
+  display: flex;
+}
+.profileName{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-label{
+  font-size : 17px;
+  font-weight: 500;
+  margin : 10px;
+  margin-right: 20px;
+}
+.profile-value{
+  font-size: 16px;
+  margin: 10px;
+  border : solid black 2px;
+  padding : 10px;
+  padding-bottom: 1px;
+  margin-top : 5px;
+  width: 200px;
+  border-radius: 10px;
+  margin-left : 0px;
+  padding-top: 5px;
+  background-color:rgb(243, 247, 251);
+}
+.profile-value.email{
+  font-size: 16px;
+  margin: 10px;
+  border : solid black 2px;
+  padding : 10px;
+  padding-bottom: 1px;
+  margin-top : 5px;
+  width: 500px;
+  margin-left : 0px;
+  padding-top: 5px;
+}
+.profile-value.na{
+  color:red;
+}
+
+
+.profPosition{
+  display: flex;
+}
+.profLocation{
+  display: flex;
+}
+
+.updateProfile{
+  /* border : solid red 2px; */
+  width: 150px;
+  margin : 30px;
+  margin-left : 20px;
+  padding:3px;
+  padding-left : 21px;
+  text-decoration: none;
+  background-color:rgb(35, 160, 237);
+  color: white;
+  border-radius: 7px;
+  margin-top : 25px;
+  transition: background-color 0.5s,transform 0.5s;
+}
+.updateProfile:hover{
+  background-color:rgb(0, 133, 215);
+  transform : translateY(-1px) ;
+  cursor: pointer;
+}

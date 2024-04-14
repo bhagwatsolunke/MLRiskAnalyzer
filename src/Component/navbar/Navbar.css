@@ -106,6 +106,7 @@
     padding: 6px;
     text-decoration: none;
     color: white;
+    transition: background-color 0.5s,transform 0.5s,border 0.5s;
 }
 .fa-regular.fa-user:hover{
     cursor: pointer;
