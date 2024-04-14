@@ -121,13 +121,4 @@ router.get("/watchlist/:userId", async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
 module.exports = router; // Export the router for use in other files

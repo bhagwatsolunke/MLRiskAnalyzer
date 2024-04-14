@@ -24,14 +24,27 @@
     display: flex;
     justify-content: space-between;
 }
-
-.btn.btn-primary.watchlist{
-    transition: background-color 0.5s,transform 0.5s;
+.item-right-top{
+    width: 120px;
+    display: flex;
+    height: 30px;
+    background-color: white;
+    box-shadow: 4px 4px 2px rgba(0,0,0,0.2);
+    border-radius: 4px;
 }
 
-.btn.btn-primary.watchlist:hover{
-    transform: translateY(-1px);
-    /* border :solid red 1px; */
-    background-color: red;
-
+.Removewatchlist{
+    font-family : 'Varela Round', sans-serif;
+    border : none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 2px;
+    background-color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    padding-left : 12px;
+}
+.fa-solid.fa-minus.watchlist{
+    padding-top: 4px;
+    padding-left: 5px;
 }

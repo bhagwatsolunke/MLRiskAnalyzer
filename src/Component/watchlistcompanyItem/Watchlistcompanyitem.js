@@ -50,8 +50,9 @@ export default function WatchlistCompanyItem({ companyItem }) {
           <h4 className='item-title'>{companyItem.companyname}</h4>
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
         </div>
-        <div className='item-right'>
-        <a href="#" className="btn btn-primary watchlist" onClick={() => removefromWatchlist(companyItem._id)} >Remove</a>
+        <div className='item-right-top'>
+        <a href="#" className="Removewatchlist" onClick={() => removefromWatchlist(companyItem._id)} >Remove</a>
+        <i class="fa-solid fa-minus watchlist"></i>
         </div>
       </div>
     </Link>
