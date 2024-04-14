@@ -3,6 +3,8 @@ import axios from 'axios';
 import './CompanyItem.css'
 import { Link } from "react-router-dom";
 
+
+
 export default function CompanyItem({ companyItem }) {
   const [user, setUser] = useState(null);
   const [isAdded, setIsAdded] = useState(false);
@@ -31,6 +33,7 @@ export default function CompanyItem({ companyItem }) {
 
   const addToWatchlist = async (companyId) => {
     try {
+
       if (!user || !user.userId) {
         console.error('User ID not found');
         return;
@@ -43,23 +46,26 @@ export default function CompanyItem({ companyItem }) {
     }
   };
 
+  
+
   return (
-    // CompanyItem
-    <Link to={`/`} className='item-container'>
+    
+     <Link to={`/company/${companyItem._id}`} className='item-container'>
       <div className='item'>
-        <div className='item-left'>
-          <h4 className='item-title'>{companyItem.companyname}</h4>
+        <div className='item-left' >
+
+          <h4 className='item-title' >{companyItem.companyname}</h4>
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
+
         </div>
         <div className='item-right'>
-        {isAdded ? (
-          <button className='btn btn-success' disabled>Added to Watchlist</button>
-        ):(
-          <button className='btn btn-primary' onClick={()=>addToWatchlist(companyItem._id)}>Add to watchlist</button>
-        )}
+          {isAdded ? (
+            <button className='btn btn-success' disabled>Added to Watchlist</button>
+          ) : (
+            <button className='btn btn-primary' onClick={() => addToWatchlist(companyItem._id)}>Add to watchlist</button>
+          )}
         </div>
       </div>
-    </Link>
-
+   </Link>
   );
 }

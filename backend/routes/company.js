@@ -38,6 +38,29 @@ router.get("/", async (req, res) => {
     }
 });
 
+
+router.get("/:companyId", async (req, res) => {
+    try {
+        // Extract company ID from request parameters
+        const companyId = req.params.companyId;
+
+        // Find the company by ID in the database
+        const company = await Company.findById(companyId);
+
+        // Check if company exists
+        if (!company) {
+            return res.status(404).json({ error: 'Company not found' });
+        }
+
+        // If company exists, return it
+        res.status(200).json(company);
+    } catch (err) {
+        console.error(err); // Log the error for debugging
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 // to add company to watchlist of user 
 router.put("/:userId/addwatchlist", async (req, res) => {
     if (req.body.companyId) {
