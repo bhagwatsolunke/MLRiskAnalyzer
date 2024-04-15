@@ -28,6 +28,13 @@
     display: flex;
     
 }
+.item-left{
+    text-decoration: none;
+    /* border : solid red 2px; */
+    width: 450px;
+    color: black;
+    font-family : 'Varela Round', sans-serif;
+}
 .item-right-top{
     /* border : solid red 2px; */
     width: 120px;

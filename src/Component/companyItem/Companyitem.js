@@ -50,14 +50,14 @@ export default function CompanyItem({ companyItem }) {
 
   return (
     
-     <Link to={`/company/${companyItem._id}`} className='item-container'>
+     <div className='item-container'>
       <div className='item'>
-        <div className='item-left' >
+        <Link to={`/company/${companyItem._id}`} className='item-left' >
 
           <h4 className='item-title' >{companyItem.companyname}</h4>
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
 
-        </div>
+        </Link>
         <div className='item-right'>
           {isAdded ? (
             <button className='watchlistAdded' disabled>Added</button>
@@ -69,6 +69,6 @@ export default function CompanyItem({ companyItem }) {
           )}
         </div>
       </div>
-   </Link>
+   </div>
   );
 }

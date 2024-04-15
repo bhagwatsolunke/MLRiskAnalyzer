@@ -44,17 +44,17 @@ export default function WatchlistCompanyItem({ companyItem }) {
 
 
   return (
-    <Link to={`/company/${companyItem._id}`} className='item-container'>
+    <div className='item-container'>
       <div className='item'>
-        <div className='item-left'>
+        <Link to={`/company/${companyItem._id}`}className='item-left'>
           <h4 className='item-title'>{companyItem.companyname}</h4>
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
-        </div>
+        </Link>
         <div className='item-right-top'>
         <a href="#" className="Removewatchlist" onClick={() => removefromWatchlist(companyItem._id)} >Remove</a>
         <i class="fa-solid fa-minus watchlist"></i>
         </div>
       </div>
-      </Link>
+      </div>
   );
 }
