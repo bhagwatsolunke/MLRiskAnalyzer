@@ -6,10 +6,26 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    lastname:{
+        type: String,
+        default:""
+    },
+    designation:{
+        type: String,
+        default:""
+        },
     email:{
         type: String,
         required: true,
         unique: true
+    },
+    organization:{
+        type: String,
+        default:""
+    },
+    location:{
+        type:String,
+        default:""
     },
     password:{
         type: String,

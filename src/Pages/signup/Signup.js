@@ -37,7 +37,12 @@ const Signup = () => {
   };
 
   const onChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    if (e.target.name === "name") {
+      const firstName = e.target.value.split(" ")[0]; // Take only the first word
+      setCredentials({ ...credentials, name: firstName });
+    } else {
+      setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    }
   };
 
   return (
