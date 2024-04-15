@@ -40,8 +40,13 @@ router.post('/createuser', [
     });
     const userData = {
       name: user.name,
+      lastname: user.lastname,
+      designation: user.designation,
       email: user.email,
-      userId:user.id,
+      organization: user.organization,
+      location: user.location,
+      userId: user.id,
+      watchlist: user.watchlist,
     };
 
 
@@ -98,8 +103,13 @@ let success=false;
 
     const userData = {
       name: user.name,
+      lastname: user.lastname,
+      designation: user.designation,
       email: user.email,
+      organization: user.organization,
+      location: user.location,
       userId: user.id,
+      watchlist: user.watchlist,
     };
 
     const data = {
@@ -133,7 +143,9 @@ router.post('/getuser', fetchuser,  async (req, res) => {
   }
 })
 
-router.put('/id', fetchuser, async (req, res) => {
+
+
+router.put('/edituser/:id', fetchuser, async (req, res) => {
   const { name, lastname, designation, email, organization, location } = req.body;
   try {
     let user = await User.findById(req.params.id);
@@ -178,7 +190,6 @@ router.put('/id', fetchuser, async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 
 

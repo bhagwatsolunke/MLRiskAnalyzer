@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 // Available Routes
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/company', require('./routes/company'))
-
+app.use('/api/edit', require('./routes/edit'))
 
 
 app.listen(port, () => {
