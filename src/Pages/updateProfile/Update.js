@@ -19,7 +19,7 @@ export default function UpdateProfilePage(){
     }, []);
 
     const [userData, setUserData] = useState({
-        firstName: storedUser ? storedUser.name || '' : '',
+        name: storedUser ? storedUser.name || '' : '',
         lastName : storedUser ? storedUser.lastName || '' : '',
         email : storedUser ? storedUser.email || '' : '',
         designation : storedUser ? storedUser.designation || '' : '',
@@ -40,7 +40,7 @@ export default function UpdateProfilePage(){
         console.log(userData);
         //Send the updated info to server
         try{
-            const response = await fetch(`${apiEndpoint}/api/user/update`,{
+            const response = await fetch(`${apiEndpoint}/api/auth/edituser`,{
                 method : 'PUT',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -143,3 +143,5 @@ export default function UpdateProfilePage(){
     )
 
 }
+
+
