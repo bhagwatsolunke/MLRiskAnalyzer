@@ -74,7 +74,7 @@ export default function UpdateProfilePage(){
                             className='update-input'
                             type='text'
                             id='firstName'
-                            name='name'
+                            name='firstName'
                             value={userData.firstName}
                             onChange={handleChange}
                         />
@@ -108,7 +108,7 @@ export default function UpdateProfilePage(){
                             className='update-input'
                             type='text'
                             id='designation'
-                            name='Designation'
+                            name='designation'
                             value={userData.designation}
                             onChange={handleChange}
                         />
@@ -128,7 +128,7 @@ export default function UpdateProfilePage(){
                             className='update-input'
                             type='text'
                             id='location'
-                            name='Location'
+                            name='location'
                             value={userData.location}
                             onChange={handleChange}
                         />
