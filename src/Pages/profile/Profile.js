@@ -17,6 +17,9 @@ function ProfilePage() {
       setUser(parsedUser);
     }, []);
 
+
+
+    console.log(user);
   return (
     <div className="profile">
       <div className="profile-header">
@@ -33,7 +36,7 @@ function ProfilePage() {
                 <div className="profile-label">First Name:</div>
                 <div className={`profile-value ${user.name? '' : 'na'}`}>{user.name ? user.name : 'NA'}</div>
                 <div class="profile-label">Last Name:</div>
-                <div className={`profile-value ${user.lastname? '' : 'na'}`}>{user.lastname ? user.name : 'NA'}</div>
+                <div className={`profile-value ${user.lastname? '' : 'na'}`}>{user.lastname ? user.lastname : 'NA'}</div>
               </div>
             </div>
             <div className='profileBox'>
@@ -47,14 +50,14 @@ function ProfilePage() {
             <div className='profileBox'>
               <div className='profPosition'>
                 <div className='profile-label'>Designation: </div>
-                <div className={`profile-value ${user.designation? '' : 'na'}`}>{user.designation ? user.name : 'NA'}</div>
-                <div className='profile-label'>Organistion: </div>
-                <div className={`profile-value ${user.organisation? '' : 'na'}`}>{user.organisation ? user.name : 'NA'}</div>
+                <div className={`profile-value ${user.designation? '' : 'na'}`}>{user.designation ? user.designation : 'NA'}</div>
+                <div className='profile-label'>Organization: </div>
+      <div className={`profile-value ${user.organization ? '' : 'na'}`}>{user.organization ? user.organization : 'NA'}</div>
               </div>
             </div>
               <div className='profLocation'>
                 <div className='profile-label'>Location: </div>
-                <div className={`profile-value ${user.location? '' : 'na'}`}>{user.location ? user.name : 'NA'}</div>
+                <div className={`profile-value ${user.location? '' : 'na'}`}>{user.location ? user.location : 'NA'}</div>
               </div>
           </div>
           <Link className='updateProfile' to='/updateProfile' role="button">Update Profile</Link>
