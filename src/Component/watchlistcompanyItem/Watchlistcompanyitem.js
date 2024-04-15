@@ -44,7 +44,7 @@ export default function WatchlistCompanyItem({ companyItem }) {
 
 
   return (
-    <Link to={`/`} className='item-container'>
+    <Link to={`/company/${companyItem._id}`} className='item-container'>
       <div className='item'>
         <div className='item-left'>
           <h4 className='item-title'>{companyItem.companyname}</h4>
@@ -55,6 +55,6 @@ export default function WatchlistCompanyItem({ companyItem }) {
         <i class="fa-solid fa-minus watchlist"></i>
         </div>
       </div>
-    </Link>
+      </Link>
   );
 }

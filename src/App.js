@@ -10,7 +10,7 @@ import About from './Pages/about/About.js';
 import ProfilePage from './Pages/profile/Profile.js';
 import Watchlist from './Pages/watchlist/Watchlist.js';
 import Analysis from './Pages/analysis/Analysis.js';
-import UpdateProfile from './Pages/updateProfile/Update.js';
+import CompanyProfile from './Pages/companyprofile/CompanyProfile.js';
 
 function App() {
   const[alert,setAlert]= useState(null);
@@ -31,7 +31,8 @@ function App() {
         <Alert alert={alert}/>
         <Routes>
           <Route exact path="/" element={<Homepage showAlert={showAlert} />} />
-          <Route exact path="/watchlist" element={<Watchlist showAlert={showAlert} />} />
+          <Route exact path="/company/:companyId" element={<CompanyProfile/>} />         
+           <Route exact path="/watchlist" element={<Watchlist showAlert={showAlert} />} />
           <Route exact path="/analysis" element={<Analysis showAlert={showAlert}/>} />
           <Route exact path="/profile" element={<ProfilePage/>} />
           <Route exact path="/about" element={<About/>} />
