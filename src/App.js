@@ -11,6 +11,7 @@ import ProfilePage from './Pages/profile/Profile.js';
 import Watchlist from './Pages/watchlist/Watchlist.js';
 import Analysis from './Pages/analysis/Analysis.js';
 import CompanyProfile from './Pages/companyprofile/CompanyProfile.js';
+import UpdateProfile from './Pages/updateProfile/Update.js';
 
 function App() {
   const[alert,setAlert]= useState(null);
