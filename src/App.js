@@ -12,7 +12,7 @@ import Watchlist from './Pages/watchlist/Watchlist.js';
 import Analysis from './Pages/analysis/Analysis.js';
 import CompanyProfile from './Pages/companyprofile/CompanyProfile.js';
 import UpdateProfile from './Pages/updateProfile/Update.js';
-import News from './Component/news/News.js';
+import News from './Pages/news/News.js';
 
 
 function App() {
