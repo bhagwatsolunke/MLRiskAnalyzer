@@ -75,7 +75,7 @@ export default function UpdateProfilePage() {
                             id='firstName'
                             name='name'
                             value={userData.name}
-                            onChange={handleChange}
+                             onChange={handleChange}
                         />
                         <label htmlFor='lastName' className='update-label'>Last Name: </label>
                         <input 
