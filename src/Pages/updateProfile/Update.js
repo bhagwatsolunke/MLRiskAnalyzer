@@ -16,7 +16,7 @@ export default function UpdateProfilePage() {
 
     const [userData, setUserData] = useState({
         name: '',
-        lastName: '',
+        lastname: '',
         email: '',
         designation: '',
         organization: '',
@@ -81,9 +81,9 @@ export default function UpdateProfilePage() {
                         <input 
                             className='update-input'
                             type='text'
-                            id='lastName'
-                            name='lastName'
-                            value={userData.lastName}
+                            id='lastname'
+                            name='lastname'
+                            value={userData.lastname}
                             onChange={handleChange}
                         />
                     </div>
