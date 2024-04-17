@@ -1,0 +1,48 @@
+.my-3{
+    border : solid rgb(147, 194, 236) 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.5s,transform 0.5s,box-shadow 0.5s;
+}
+.my-3:hover{
+    box-shadow: 4px 6px 5px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+}
+
+.card-img-top{
+    width:98%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+.card-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 2px;
+    cursor: pointer;
+    overflow: hidden; /* Hide any overflow */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Limit title to two lines */
+    line-height: 1.2; /* Adjust line height as needed */
+    margin-left: 4px;
+    text-decoration: none;
+}
+.card-text{
+    font-family : 'Varela Round', sans-serif;
+    font-size : 15px;
+    line-height: 22px;
+    margin-top : 5px;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    display : -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient : vertical;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 14px;
+    /* border: solid white 2px; */
+}
