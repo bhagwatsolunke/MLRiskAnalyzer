@@ -13,6 +13,7 @@ import Analysis from './Pages/analysis/Analysis.js';
 import CompanyProfile from './Pages/companyprofile/CompanyProfile.js';
 import UpdateProfile from './Pages/updateProfile/Update.js';
 import News from './Pages/news/News.js';
+import MLRiskAnalyzer from './Pages/mlriskanalyzer/mlriskanalyzer.js';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Navbar />
         <Alert alert={alert}/>
         <Routes>
+          <Route exact path="/mlriskanalyzer" element={<MLRiskAnalyzer/>} />
           <Route exact path="/" element={<Homepage showAlert={showAlert} />} />
           <Route exact path="/company/:companyId" element={<CompanyProfile/>} />         
            <Route exact path="/watchlist" element={<Watchlist showAlert={showAlert} />} />

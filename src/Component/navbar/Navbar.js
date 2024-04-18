@@ -14,7 +14,9 @@ export default function Navbar() {
   return (
     <div className='top'>
         <div className="topLeft">
-          <span className="title">MLRiskAnalyzer</span>
+            <Link className="link title" to="/mlriskanalyzer">
+               MLRiskAnalyzer
+              </Link>
         </div>
         <div className="topCenter">
           <ul className="topList">

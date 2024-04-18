@@ -58,6 +58,7 @@ router.get("/:companyId", async (req, res) => {
 
         // If company exists, return it
         res.status(200).json(company);
+        // console.log(company);
     } catch (err) {
         console.error(err); // Log the error for debugging
         res.status(500).json({ error: 'Internal server error' });

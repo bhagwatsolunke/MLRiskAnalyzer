@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 export default function CompanyProfile() { 
   const {companyId} = useParams();
+ // console.log(companyId);
   return (
     <>
       <CompanyData companyId = {companyId}/>
