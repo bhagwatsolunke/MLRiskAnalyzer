@@ -11,7 +11,7 @@ router.get('/:symbol',async (req,res)=>{
 
         const stockPrice = details.priceInfo.lastPrice;
         const issuedSize = details.securityInfo.issuedSize;
-        const valuation = stockPrice * issuedSize;
+        const valuation = (stockPrice * issuedSize)/10000000;
 
         const company_details = {
             stockPrice : stockPrice,

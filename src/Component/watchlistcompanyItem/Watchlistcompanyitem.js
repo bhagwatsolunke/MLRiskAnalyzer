@@ -42,6 +42,21 @@ export default function WatchlistCompanyItem({ companyItem }) {
     }
   };
 
+  function ScoreColor( score ) {
+    if (score > 8) {
+     return'very-high';
+    } else if (score > 6) {
+     return'high';
+    } else if (score > 4) {
+      return'medium';
+    } else if(score >2)
+    {
+      return 'low'
+    }else if(score>=0){
+      return 'very-low'
+    }
+  }
+  
 
   return (
     <div className='item-container'>
@@ -49,6 +64,10 @@ export default function WatchlistCompanyItem({ companyItem }) {
         <Link to={`/company/${companyItem._id}`}className='item-left'>
           <h4 className='item-title'>{companyItem.companyname}</h4>
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
+          <p className='item-score'>
+            <b>Sentiment Score: </b>
+            <span className={`item-score-val ${ScoreColor(3)}`}>9.0</span>
+          </p>
         </Link>
         <div className='item-right-top'>
         <a href="#" className="Removewatchlist" onClick={() => removefromWatchlist(companyItem._id)} >Remove</a>

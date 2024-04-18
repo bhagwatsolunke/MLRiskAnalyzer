@@ -24,10 +24,49 @@
     display: flex;
     justify-content: space-between;
 }
+.item-title{
+    color : blue;
+}
 .item-right{
     display: flex;
     
 }
+.item-category{
+    /* border : solid yellow 2px; */
+    margin-bottom: 2px;
+}
+.item-score{
+    margin-bottom: 2px;
+}
+.item-score-val{
+    /* border :solid yellow 2px; */
+    width: 60px;
+    padding:2px;
+    padding-left :20px;
+    padding-right:20px;
+    border-radius: 5px;
+    font-weight: bold;
+    color:white;
+}
+.item-score-val.very-high{
+    background-color: green;
+}
+.item-score-val.high{
+    background-color: rgb(2, 192, 2);
+}
+.item-score-val.medium{
+    background-color: rgb(160, 239, 160);
+    color: black;
+}
+.item-score-val.low{
+    background-color: rgb(246, 109, 109);
+    color :white;
+}
+.item-score-val.very-low{
+    background-color: red;
+    color: white;
+}
+
 .item-left{
     text-decoration: none;
     /* border : solid red 2px; */
