@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router(); 
 const { NseIndia } = require("stock-nse-india");
 
-router.get('/details/:symbol',async (req,res)=>{
+router.get('/:symbol',async (req,res)=>{
     try{
-        const {symbol} = req.params;
+        const symbol = req.params.symbol;
 
         const nseIndia = new NseIndia();
         const details = await nseIndia.getEquityDetails(symbol);
@@ -13,10 +13,10 @@ router.get('/details/:symbol',async (req,res)=>{
         const issuedSize = details.securityInfo.issuedSize;
         const valuation = stockPrice * issuedSize;
 
-        const company_details = new company_details({
+        const company_details = {
             stockPrice : stockPrice,
             valuation : valuation
-        })
+        };
         res.status(201).json(company_details);
     }catch(error){
         console.error(error);

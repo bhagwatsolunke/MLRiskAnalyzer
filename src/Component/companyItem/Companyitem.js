@@ -64,7 +64,7 @@ export default function CompanyItem({ companyItem }) {
           ) : (
             <div className='item-right-top'>
               <button className='watchlistNotAdded' onClick={()=>addToWatchlist(companyItem._id)}>Watchlist</button>
-              <i class="fa-solid fa-plus watchlist"></i>
+              <i className="fa-solid fa-plus watchlist"></i>
           </div>
           )}
         </div>
