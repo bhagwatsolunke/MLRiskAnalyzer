@@ -9,13 +9,17 @@ const User = require('../models/User');
 router.post("/", async (req, res) => {
     try {
         // Check if required fields are present in the request body
-        if (!req.body.companyname || !req.body.industry) {
-            return res.status(400).json({ error: 'Name, industry' });
+        if (!req.body.companyname) {
+            return res.status(400).json({ error: 'Name not present' });
         }
 
         const newCompany = new Company({
             companyname: req.body.companyname,
             industry: req.body.industry,
+            symbol : req.body.symbol,
+            listingDate:req.body.listingDate,
+            founded : req.body.founded,
+            listed : req.body.listed,
         });
 
         const savedCompany = await newCompany.save();
@@ -38,7 +42,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-
+// To get a single company
 router.get("/:companyId", async (req, res) => {
     try {
         // Extract company ID from request parameters
