@@ -47,22 +47,37 @@ export default function CompanyData({companyId}){
     return (
         <div>
         {company && (
-            <div className="company-data">
-                <div className="company-title">Name: {company.companyname}</div>
-                <div className="first-row">
-                    <div className="first-row-left">Listed: {company.listed}</div>
-                    <div className="first-row-right">Symbol: {company.symbol}</div>
-                </div>
-                <div className="second-row">
-                    <div className="second-row-left">Founded: {company.founded}</div>
-                    <div className="second-row-right">Listing-Date: {company.listingDate}</div>
-                </div>
-                <div className="third-row">
-                    Industry: {company.industry}
-                </div>
-                <div className="fourth-row">
-                    <div className="fourth-row-left">Stock Price: {stockPrice}</div>
-                    <div className="fourth-row-right">Total Market Valuation:{valuation}</div>
+            <div className="company">
+                <div className="company-title">{company.companyname}</div>
+                <div className="company-data">
+                    <div className="left">
+                        <div className="first-row">
+                            <div className="first-row-left">Listed: {company.listed}</div>
+                        </div>
+                        <div className="second-row">
+                            <div className="second-row-left">Founded: {company.founded}</div>
+                        </div>
+                        <div className="third-row">
+                            Industry: {company.industry}
+                        </div>
+                        <div className="fourth-row">
+                            <div className="fourth-row-left">Stock Price: {stockPrice}</div>
+                        </div>
+                    </div>
+                    <div className="right">
+                        <div className="first-row">
+                            <div className="first-row-right">Symbol: {company.symbol}</div>
+                        </div>
+                        <div className="second-row">
+                            <div className="second-row-right">Listing-Date: {company.listingDate}</div>
+                        </div>
+                        <div className="third-row">
+                            <br></br>
+                        </div>
+                        <div className="fourth-row">
+                            <div className="fourth-row-right">Total Market Valuation: {valuation}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )}
