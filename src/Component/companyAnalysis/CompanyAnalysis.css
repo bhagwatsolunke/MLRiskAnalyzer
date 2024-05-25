@@ -1,3 +1,110 @@
-.companyAnalysis{
-    border : solid red 2px;
+
+.analysis.first-row{
+    /* border : solid red 2px; */
+    display: flex;
+    justify-content: center;
+    margin : 0px;
+}
+
+.sentiment-score{
+    border : solid black 0.5px;
+    padding : 5px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom : 5px;
+}
+.sentiment-score.very-high {
+    background-color: green;
+}
+
+.sentiment-score.high {
+    background-color: rgb(2, 192, 2);
+}
+
+.sentiment-score.medium {
+    background-color: rgb(160, 239, 160);
+    color: black;
+}
+
+.sentiment-score.low {
+    background-color: rgb(246, 109, 109);
+    color: white;
+}
+
+.sentiment-score.very-low {
+    background-color: red;
+    color: white;
+}
+
+
+.analysis.second-row{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.analysis-col{
+    /* border : solid yellow 2px; */
+    flex: 1;
+    padding: 10px;
+    border: 3px solid #ccc;
+    border-radius: 6px;
+    margin: 0 40px;
+    background-color: #f0f0f0;
+    box-shadow: 3px 5px 6px rgba(0,0,0,0.1);
+}
+
+.analysis-col h3{
+    text-align: center;
+    font-size: 18px;
+}
+
+.sentiment-table{
+    border : solid rgb(0, 0, 0) 2px;
+    border-radius: 13px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.sentiment-table th, .sentiment-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.sentiment-table th {
+    background-color: #f2f2f2;
+}
+
+.sentiment-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.sentiment-table tr:hover {
+    background-color: #dddddd;
+}
+.analysis.third-row{
+    /* border : solid red 2px; */
+    background-color: #f0f0f0;
+    box-shadow: 3px 5px 6px rgba(0,0,0,0.1);
+    margin: 40px;
+    border-radius: 6px;
+}
+.analysis.third-row h3{
+    padding:10px;
+    padding-left : 5px;
+}
+.analysis-details{
+    padding-left : 5px;
+}
+
+.analysis.notice{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    /* border : solid red 2px; */
+    margin:10px;
 }

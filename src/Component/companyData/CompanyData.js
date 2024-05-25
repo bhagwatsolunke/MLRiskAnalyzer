@@ -75,7 +75,7 @@ export default function CompanyData({companyId}){
                             <br></br>
                         </div>
                         <div className="fourth-row">
-                            <div className="fourth-row-right">Total Market Valuation: {valuation} Cr</div>
+                            <div className="fourth-row-right">Total Market Valuation: {valuation ? valuation.toFixed(2): 'N/A'} Cr</div>
                         </div>
                     </div>
                 </div>
