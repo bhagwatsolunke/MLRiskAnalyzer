@@ -6,7 +6,7 @@ const CompanySchema = new mongoose.Schema(
         type:String,
         require:true,
         minlength:3,
-        maxlength:20,
+        maxlength:200,
         unique:true,
     },
     industry: {

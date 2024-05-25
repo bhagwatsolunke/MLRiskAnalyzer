@@ -1,0 +1,74 @@
+/* Analysis.css */
+.analysis-top {
+    padding: 20px;
+    /* background-color: #f0f0f0; */
+    border-radius: 5px;
+}
+
+.greet {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.analysis-input{
+    /* border : solid red 2px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-button{
+    margin-top : 10px;
+    cursor : pointer;
+    background-color: teal;
+    border : none;
+    color : white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    font-family:'Roboto', sans-serif;
+    transition: background 0.5s,transform 0.5s;
+    margin-bottom: 0px;
+    width:20%;
+}
+.review-button:hover{
+    background-color: rgb(6, 92, 92);
+    transform: translateY(-1px);
+}
+.review-button:disabled{
+    cursor: not-allowed;
+    background-color : rgb(12, 188, 188);
+}
+.analysis-input textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid #ccc;
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.results{
+    /* border : solid red 2px; */
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.column{
+    /* border : solid yellow 2px; */
+    flex: 1;
+    padding: 10px;
+    border: 3px solid #ccc;
+    border-radius: 6px;
+    margin: 0 40px;
+    background-color: #f0f0f0;
+}
+
+.column h3{
+    text-align: center;
+    font-size: 23px;
+}
+.column p {
+    margin :3px;
+    /* border : solid red 2px; */
+}
