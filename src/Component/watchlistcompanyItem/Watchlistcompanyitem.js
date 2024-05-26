@@ -66,7 +66,7 @@ export default function WatchlistCompanyItem({ companyItem }) {
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
           <p className='item-score'>
             <b>Sentiment Score: </b>
-            <span className={`item-score-val ${ScoreColor(3)}`}>9.0</span>
+            <span className={`item-score-val ${ScoreColor(7)}`}>9.0</span>
           </p>
         </Link>
         <div className='item-right-top'>
