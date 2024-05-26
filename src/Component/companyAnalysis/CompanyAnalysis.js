@@ -9,8 +9,8 @@ export default function CompanyAnalysis({ companyId }) {
   useEffect(() => {
     const getCompanyAnalysis = async () => {
       try {
-       // const res = await axios.get(`http://localhost:8080/api/companyanalysis/${companyId}`);
-       const res = await axios.get(`http://localhost:8080/api/companyanalysis/8`);
+        const res = await axios.get(`http://localhost:8080/api/companyanalysis/${companyId}`);
+     //  const res = await axios.get(`http://localhost:8080/api/companyanalysis/8`);
        setModelScores(res.data.modelScores || []); // Ensuring modelScores is an array
        setSentimentScore(res.data.sentimentScore || 'N/A'); // Default to empty string if not available
       } catch (error) {

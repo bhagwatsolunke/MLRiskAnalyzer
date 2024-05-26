@@ -9,7 +9,7 @@ export default function CompanyProfile() {
   return (
     <>
       <CompanyData companyId = {companyId}/>
-      <CompanyAnalysis/>
+      <CompanyAnalysis companyId = {companyId}/>
     </>
   );
 }

@@ -5,6 +5,23 @@ import "./WatchlistcompanyItem.css"
 
 export default function WatchlistCompanyItem({ companyItem }) {
   const [user, setUser] = useState(null);
+  const [sentimentScore, setSentimentScore] = useState('');
+
+
+  useEffect(() => {
+    const getCompanyAnalysis = async () => {
+      try {
+        const res = await axios.get(`http://localhost:8080/api/companyanalysis/${companyItem._id}`);
+      // const res = await axios.get(`http://localhost:8080/api/companyanalysis/8`);
+       setSentimentScore(res.data.sentimentScore || 'N/A'); // Default to empty string if not available
+      } catch (error) {
+        console.error('Error fetching company analysis details: ', error);
+      }
+    };
+    getCompanyAnalysis();
+  }, [companyItem._id]);
+
+
 
  
   useEffect(() => {
@@ -66,7 +83,7 @@ export default function WatchlistCompanyItem({ companyItem }) {
           <p className='item-category'><b>Sector: </b> {companyItem.industry}</p>
           <p className='item-score'>
             <b>Sentiment Score: </b>
-            <span className={`item-score-val ${ScoreColor(7)}`}>9.0</span>
+            <span className={`item-score-val ${ScoreColor(sentimentScore)}`}> {sentimentScore || 'N/A'}</span>
           </p>
         </Link>
         <div className='item-right-top'>
