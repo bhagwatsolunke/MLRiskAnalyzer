@@ -12,7 +12,7 @@ export default function CompanyAnalysis({ companyId }) {
        // const res = await axios.get(`http://localhost:8080/api/companyanalysis/${companyId}`);
        const res = await axios.get(`http://localhost:8080/api/companyanalysis/8`);
        setModelScores(res.data.modelScores || []); // Ensuring modelScores is an array
-        setSentimentScore(res.data.sentimentScore || ''); // Default to empty string if not available
+       setSentimentScore(res.data.sentimentScore || 'N/A'); // Default to empty string if not available
       } catch (error) {
         console.error('Error fetching company analysis details: ', error);
       }
@@ -37,7 +37,7 @@ export default function CompanyAnalysis({ companyId }) {
   return (
     <div className='companyAnalysis'>
       <div className='analysis first-row'>
-        <p className={`sentiment-score ${ScoreColor(sentimentScore)}`}>Sentiment Score: {sentimentScore}</p>
+      <p className={`sentiment-score ${ScoreColor(sentimentScore)}`}>Sentiment Score: {sentimentScore || 'N/A'}</p>
       </div>
       <div className='analysis second-row'>
         {modelScores.map((modelData, index) => (
@@ -62,12 +62,16 @@ export default function CompanyAnalysis({ companyId }) {
           </div>
         ))}
       </div>
-      <div className='analysis third-row'>
-        <h3>Analysis Details</h3>
-        <p className='analysis-details'>RNN-Accuracy 52 % -- Data Cleaning -- Labelling -- 72%  Time_2.7s </p>
-        <p className='analysis-details'>CNN-Accuracy 67 % -- Data Cleaning -- Labelling -- 76%  Time_3.5s</p>
-        <p className='analysis-details'>Transformer-Accuracy 73 % -- Data Cleaning -- Labelling -- 82%  Time_1.5s</p>
-      </div>
+      {modelScores.length > 0 && (
+        <div className='analysis third-row'>
+          <h3>Analysis Details</h3>
+          {modelScores.map((modelData, index) => (
+            <p key={index} className='analysis-details'>
+              {modelData.model} - Accuracy: {modelData.afterAccuracy} -- Before Accuracy: {modelData.beforeAccuracy} -- Time: {modelData.time}
+            </p>
+          ))}
+        </div>
+      )}
       <div className='analysis notice'>
         <p>*Notice : All the analysis performed are on <b>Data Available</b> in the last <b>2 Months</b>, and does not reflect old data.</p>
       </div>

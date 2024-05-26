@@ -5,6 +5,18 @@ const ScoreSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  afterAccuracy:{
+    type:String,
+    default:"",
+  },
+  beforeAccuracy:{
+    type:String,
+    default:"",
+  },
+  time:{
+    type:String,
+    default:"",
+  },
   scores: [{
     origin: {
       type: String,
