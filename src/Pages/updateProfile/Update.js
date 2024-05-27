@@ -22,7 +22,23 @@ export default function UpdateProfilePage() {
         organization: '',
         location: '',
     });
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+        setUser(parsedUser);
+        if (parsedUser) {
+            setUserData({
+                name: parsedUser.name,
+                lastname: parsedUser.lastname,
+                email: parsedUser.email,
+                designation: parsedUser.designation,
+                organization: parsedUser.organization,
+                location: parsedUser.location,
+            });
+        }
+    }, []);
 
+    
     const navigate = useNavigate();
 
     const handleChange = (e) => {

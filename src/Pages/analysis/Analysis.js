@@ -7,6 +7,7 @@ export default function Analysis(props) {
     const [sentimentResults, setSentimentResults] = useState({ rnn: '', cnn: '', transformer: '' });
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [results, setResults] = useState();
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -38,11 +39,16 @@ export default function Analysis(props) {
             const response = await axios.post('http://localhost:5000/predict', {
                 text: textData,
             });
-            return {
-                rnn: response.data.rnn,
-                cnn: response.data.cnn,
-                transformer: response.data.transformer,
-            };
+            console.log(response.data[2].score);
+            const sc = response.data[2].score.toFixed(4);
+            setResults(sc);
+
+          //  setResults(response.data[2].score);
+            // return {
+            //     rnn: response.data.rnn,
+            //     cnn: response.data.cnn,
+            //     transformer: response.data.transformer,
+            // };
         } catch (error) {
             console.error('Error sending data to the model server: ', error);
             throw error;
@@ -72,21 +78,21 @@ export default function Analysis(props) {
                 <div className='results'>
                     <div className='column'>
                         <h3>RNN Model</h3>
-                        <p>Score: {sentimentResults.rnn.score}</p>
-                        <p>Classification: {sentimentResults.rnn.classification}</p>
-                        <p>Confidence: {sentimentResults.rnn.confidence}</p>
+                        <p>Score:0.0</p>
+                        <p>Classification:NA</p>
+                        <p>Confidence: NA</p>
                     </div>
                     <div className='column'>
                         <h3>CNN Model</h3>
-                        <p>Score: {sentimentResults.cnn.score}</p>
-                        <p>Classification: {sentimentResults.cnn.classification}</p>
-                        <p>Confidence: {sentimentResults.cnn.confidence}</p>
+                        <p>Score:0.00</p>
+                        <p>Classification: NA</p>
+                        <p>Confidence: Na</p>
                     </div>
                     <div className='column'>
                         <h3>Transformer Model</h3>
-                        <p>Score: {sentimentResults.transformer.score}</p>
-                        <p>Classification: {sentimentResults.transformer.classification}</p>
-                        <p>Confidence: {sentimentResults.transformer.confidence}</p>
+                        <p>Score: {results*10||0} </p>
+                        <p>Classification:NA</p>
+                        <p>Confidence: NA</p>
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@ const Login = (props) => {
 
     return (
         <div className='login'>
-            <span className='loginTitle'>Login to continue </span>
+            <span className='loginTitle'>Login </span>
             <form className='loginForm' onSubmit={handleSubmit}>
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="loginInput" placeholder="Enter your email..."value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
