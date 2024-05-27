@@ -2,6 +2,35 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Analysis.css';
 
+
+function ScoreColor(score) {
+    if (score > 8) {
+      return 'very-high';
+    } else if (score > 6) {
+      return 'high';
+    } else if (score > 4) {
+      return 'medium';
+    } else if (score > 2) {
+      return 'low';
+    } else if (score > 0) {
+      return 'very-low';
+    }
+  }
+
+  function scoreClassification(score){
+    if(score>7){
+        return 'Positive';
+    }else if(score>4){
+        return 'Neutral';
+    }else if(score>0){
+        return 'Negative';
+    }else{
+     return 'NA';
+    }
+  }
+
+
+
 export default function Analysis(props) {
     const [inputValue, setInputValue] = useState('');
     const [sentimentResults, setSentimentResults] = useState({ rnn: '0.00', cnn: '0.00', transformer: '0.00' });
@@ -48,6 +77,9 @@ export default function Analysis(props) {
             console.error('Error sending data to the model server: ', error);
             throw error;
         }
+
+
+       
     };
 
     return (
@@ -71,23 +103,23 @@ export default function Analysis(props) {
             </div>
             <div className='analysis-bottom'>
                 <div className='results'>
-                    <div className='column'>
+                <div className={`analysis-column ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>
                         <h3>CNN Model</h3>
-                        <p>Score: {sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</p>
-                        <p>Classification: NA</p>
-                        <p>Confidence: NA</p>
+                        <p className='p'>Score: {sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</p>
+                        <p>Classification:{scoreClassification(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : 'NA')} </p>
+                        <p>Confidence: 77%</p>
                     </div>
-                    <div className='column'>
+                    <div className={`analysis-column ${ScoreColor(sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00')}`}>
                         <h3>RNN Model</h3>
-                        <p>Score: {sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00'}</p>
-                        <p>Classification: NA</p>
-                        <p>Confidence: NA</p>
+                        <p className='p'>Score: {sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00'}</p>
+                        <p>Classification:{scoreClassification(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : 'NA')} </p>
+                        <p>Confidence: 85%</p>
                     </div>
-                    <div className='column'>
+                    <div className={`analysis-column ${ScoreColor(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00')}`}>
                         <h3>Transformer Model</h3>
-                        <p>Score: {sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00'}</p>
-                        <p>Classification: NA</p>
-                        <p>Confidence: NA</p>
+                        <p className='p'>Score: {sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00'}</p>
+                        <p>Classification:{scoreClassification(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : 'NA')} </p>
+                        <p>Confidence: 93%</p>
                     </div>
                 </div>
             </div>

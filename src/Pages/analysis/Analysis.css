@@ -54,7 +54,7 @@
     justify-content: space-around;
     width: 100%;
 }
-.column{
+.analysis-column{
     /* border : solid yellow 2px; */
     flex: 1;
     padding: 10px;
@@ -72,3 +72,25 @@
     margin :3px;
     /* border : solid red 2px; */
 }
+
+
+.analysis-column.very-high.p{
+    color: green;
+}
+
+.analysis-column.high.p {
+    color: rgb(2, 192, 2);
+}
+
+.analysis-column.medium.p {
+    color: rgb(160, 239, 160);
+}
+
+.analysis-column.low.p {
+    color: rgb(246, 109, 109);
+}
+
+.analysis-column.very-low.p {
+    color: red;
+}
+
