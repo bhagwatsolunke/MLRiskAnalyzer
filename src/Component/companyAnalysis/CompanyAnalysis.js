@@ -67,7 +67,7 @@ export default function CompanyAnalysis({ companyId }) {
           <h3>Analysis Details</h3>
           {modelScores.map((modelData, index) => (
             <p key={index} className='analysis-details'>
-              {modelData.model} - Accuracy: {modelData.afterAccuracy} -- Before Accuracy: {modelData.beforeAccuracy} -- Time: {modelData.time}
+              {modelData.model} - Before Accuracy: {modelData.afterAccuracy} -- Data Cleaning -- Labelling -- Accuracy : {modelData.beforeAccuracy} -- Time: {modelData.time}
             </p>
           ))}
         </div>

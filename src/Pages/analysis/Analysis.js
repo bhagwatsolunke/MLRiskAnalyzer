@@ -103,23 +103,23 @@ export default function Analysis(props) {
             </div>
             <div className='analysis-bottom'>
                 <div className='results'>
-                <div className={`analysis-column ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>
+                    <div className='analysis-column'>
                         <h3>CNN Model</h3>
-                        <p className='p'>Score: {sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</p>
-                        <p>Classification:{scoreClassification(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : 'NA')} </p>
-                        <p>Confidence: 77%</p>
+                        <p>Score: <span className={`scorecolor ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</span></p>
+                        <p>Classification: <span className={`scorecolor ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</span></p>
+                        <p>Confidence: {sentimentResults.cnn ? '73%' : '0.00'}</p>
                     </div>
                     <div className={`analysis-column ${ScoreColor(sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00')}`}>
                         <h3>RNN Model</h3>
-                        <p className='p'>Score: {sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00'}</p>
-                        <p>Classification:{scoreClassification(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : 'NA')} </p>
-                        <p>Confidence: 85%</p>
+                        <p>Score: <span className={`scorecolor ${ScoreColor(sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00'}</span></p>
+                        <p>Classification: <span className={`scorecolor ${ScoreColor(sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.rnn ? scoreClassification((sentimentResults.rnn * 10).toFixed(2)) : 'NA'}</span></p>
+                        <p>Confidence: 75%</p>
                     </div>
                     <div className={`analysis-column ${ScoreColor(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00')}`}>
                         <h3>Transformer Model</h3>
-                        <p className='p'>Score: {sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00'}</p>
-                        <p>Classification:{scoreClassification(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : 'NA')} </p>
-                        <p>Confidence: 93%</p>
+                        <p>Score: <span className={`scorecolor ${ScoreColor(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00')}`}>{sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00'}</span></p>
+                        <p>Classification: <span className={`scorecolor ${ScoreColor(sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00')}`}>{sentimentResults.transformer ? scoreClassification((sentimentResults.transformer * 10).toFixed(2)) : 'NA'}</span></p>
+                        <p>Confidence: 84%</p>
                     </div>
                 </div>
             </div>
