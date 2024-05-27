@@ -106,7 +106,7 @@ export default function Analysis(props) {
                     <div className='analysis-column'>
                         <h3>CNN Model</h3>
                         <p>Score: <span className={`scorecolor ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</span></p>
-                        <p>Classification: <span className={`scorecolor ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</span></p>
+                        <p>Classification: <span className={`scorecolor ${ScoreColor(sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00')}`}>{sentimentResults.cnn ? scoreClassification((sentimentResults.cnn * 10).toFixed(2)) : 'NA'}</span></p>
                         <p>Confidence: {sentimentResults.cnn ? '73%' : '0.00'}</p>
                     </div>
                     <div className={`analysis-column ${ScoreColor(sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00')}`}>
