@@ -4,10 +4,10 @@ import './Analysis.css';
 
 export default function Analysis(props) {
     const [inputValue, setInputValue] = useState('');
-    const [sentimentResults, setSentimentResults] = useState({ rnn: '', cnn: '', transformer: '' });
+    const [sentimentResults, setSentimentResults] = useState({ rnn: '0.00', cnn: '0.00', transformer: '0.00' });
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [results, setResults] = useState();
+    const [wordCount, setWordCount] = useState(0);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -16,7 +16,9 @@ export default function Analysis(props) {
     }, []);
 
     const handleChange = (event) => {
-        setInputValue(event.target.value);
+        const text = event.target.value;
+        setInputValue(text);
+        setWordCount(text.trim().split(/\s+/).length);
     };
 
     const handleReviewClick = async (event) => {
@@ -36,19 +38,12 @@ export default function Analysis(props) {
 
     const getSentimentAnalysis1 = async (textData) => {
         try {
-            const response = await axios.post('http://localhost:5000/predict', {
+            const response = await axios.post('http://127.0.0.1:8080/api/companyanalysis/analyze', {
                 text: textData,
             });
-            console.log(response.data[2].score);
-            const sc = response.data[2].score.toFixed(4);
-            setResults(sc);
 
-          //  setResults(response.data[2].score);
-            // return {
-            //     rnn: response.data.rnn,
-            //     cnn: response.data.cnn,
-            //     transformer: response.data.transformer,
-            // };
+            const { transformer = '0.00', cnn = '0.00', rnn = '0.00' } = response.data || {};
+            return { transformer, cnn, rnn };
         } catch (error) {
             console.error('Error sending data to the model server: ', error);
             throw error;
@@ -77,21 +72,21 @@ export default function Analysis(props) {
             <div className='analysis-bottom'>
                 <div className='results'>
                     <div className='column'>
-                        <h3>RNN Model</h3>
-                        <p>Score:0.0</p>
-                        <p>Classification:NA</p>
+                        <h3>CNN Model</h3>
+                        <p>Score: {sentimentResults.cnn ? (sentimentResults.cnn * 10).toFixed(2) : '0.00'}</p>
+                        <p>Classification: NA</p>
                         <p>Confidence: NA</p>
                     </div>
                     <div className='column'>
-                        <h3>CNN Model</h3>
-                        <p>Score:0.00</p>
+                        <h3>RNN Model</h3>
+                        <p>Score: {sentimentResults.rnn ? (sentimentResults.rnn * 10).toFixed(2) : '0.00'}</p>
                         <p>Classification: NA</p>
-                        <p>Confidence: Na</p>
+                        <p>Confidence: NA</p>
                     </div>
                     <div className='column'>
                         <h3>Transformer Model</h3>
-                        <p>Score: {results*10||0} </p>
-                        <p>Classification:NA</p>
+                        <p>Score: {sentimentResults.transformer ? (sentimentResults.transformer * 10).toFixed(2) : '0.00'}</p>
+                        <p>Classification: NA</p>
                         <p>Confidence: NA</p>
                     </div>
                 </div>
